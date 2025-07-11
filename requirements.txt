@@ -5,11 +5,13 @@ email_validator==2.2.0
 Flask==3.1.1
 Flask-FlatPages==0.8.3
 Flask-WTF==1.2.2
+gunicorn==23.0.0
 idna==3.10
 itsdangerous==2.2.0
 Jinja2==3.1.6
 Markdown==3.8.2
 MarkupSafe==3.0.2
+packaging==25.0
 python-frontmatter==1.1.0
 python-markdown==0.1.0
 PyYAML==6.0.2
