@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Our Blog</h1>
+<div class="row">
+    {% for post in posts %}
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            {% if post.meta.image %}
+            <img src="{{ url_for('static', filename=post.meta.image) }}" class="card-img-top" alt="{{ post.meta.title }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ post.meta.title }}</h5>
+                <p class="card-text"><small class="text-muted">Diterbitkan pada: {{ post.meta.date.strftime('%Y-%m-%d') if post.meta.date else 'N/A' }}</small></p>
+                <p class="card-text">{{ post.meta.description | truncate(150) }}</p>
+                <a href="{{ url_for('blog_post', path=post.path.split('/')[-1]) }}" class="btn btn-primary">Baca Lebih Lanjut</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p>Tidak ada postingan blog saat ini.</p>
+    {% endfor %}
+</div>
+{% endblock %}

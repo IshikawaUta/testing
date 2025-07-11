@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Selamat Datang di Website Kami!</h1>
+    <p class="lead">Temukan produk terbaru kami dan baca artikel menarik di blog kami.</p>
+    <hr class="my-4">
+    <p>Kami berdedikasi untuk menyediakan produk dan informasi terbaik.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('products') }}" role="button">Lihat Produk</a>
+    <a class="btn btn-secondary btn-lg" href="{{ url_for('blog') }}" role="button">Kunjungi Blog</a>
+</div>
+{% endblock %}

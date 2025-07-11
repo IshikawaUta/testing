@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="product-detail">
+    <h1 class="mb-4">{{ product.meta.title }}</h1>
+    {% if product.meta.image %}
+    <img src="{{ url_for('static', filename=product.meta.image) }}" class="img-fluid mb-4" alt="{{ product.meta.title }}">
+    {% endif %}
+    <div class="product-content">
+        {{ product.html|safe }}
+    </div>
+    {% if product.meta.price %}
+    <p class="lead mt-3">Harga: {{ product.meta.price }}</p>
+    {% endif %}
+    <a href="{{ url_for('products') }}" class="btn btn-secondary mt-3">Kembali ke Produk</a>
+</div>
+{% endblock %}
